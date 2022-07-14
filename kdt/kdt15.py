@@ -14,3 +14,17 @@ for i in word:
         break
     cnt += 1
 print(idx)
+
+# 추가문제
+# 문자열 word가 주어질 때, 해당 문자열에서 a 의 모든 위치(index)를 출력해주세요.
+# find() index() 메서드 사용 금지
+# Input HappyHacking  banana    kiwi
+# Output    1 6        1 3 5     
+
+word = input()
+idx = -1
+
+for i in word:
+    idx += 1
+    if i == 'a':
+        print(idx, end=' ')
