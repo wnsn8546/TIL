@@ -54,3 +54,5 @@ for fruit in fruits:
         fruit_count[fruit] += 1
 
 pprint(fruit_count)
+
+# if 문의 fruit 가 들어가는 논리를 제대로 수정

@@ -6,3 +6,5 @@
 
 number = 22020718
 print(len(str(number)))
+
+# 길이를 뽑아내기위해 str타입으로 형변환 하는부분 추가

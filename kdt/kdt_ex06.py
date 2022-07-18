@@ -13,3 +13,5 @@ for number in range(N + 1):
     answer.append(number * 2)
 
 print(answer)
+
+# 튜플이었던 타입을 리스트로 바꾸어 제대로 수정

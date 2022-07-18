@@ -100,7 +100,7 @@ def movie_info(movie, genres):
         "title": movie["title"],
         "vote_average": movie["vote_average"],
     }
-    
+
     return new_movie_info
 
 
@@ -145,3 +145,5 @@ if __name__ == "__main__":
     ]
 
     pprint(movie_info(movie, genres_list))
+
+# 리턴값 추가

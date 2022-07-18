@@ -21,3 +21,5 @@ for number in number_list:
     count += 1
 
 print(total / count)
+
+# count += 1 부분을 for문 안에 넣어 제대로 카운트 될 수 있도록 수정

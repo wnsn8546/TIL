@@ -19,3 +19,5 @@ for char in word:
         count += 1
 
 print(count)
+
+# 모음 별 비교문을 제대로 수정

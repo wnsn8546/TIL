@@ -7,3 +7,5 @@
 
 words = list(input().split())
 print(words)
+
+#  map 부분 부적절하여 제거

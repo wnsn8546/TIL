@@ -7,3 +7,5 @@
 
 numbers = map(int, input().split())
 print(sum(numbers))
+
+# map을 통해 int형으로 스플릿 가능하게 수정
