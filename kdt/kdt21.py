@@ -3,13 +3,18 @@
 # Input 1234
 # Output 4321
 
+# n = int(input())
+# my_list = []
+
+# while n:
+#     my_list.append(n%10)
+#     n //= 10
+
+# for i in my_list:
+#     print(i, end='')
+
 n = int(input())
-my_list = []
-result = []
 
 while n:
-    my_list.append(n%10)
+    print(n%10, end='')
     n //= 10
-
-for i in my_list:
-    print(i, end='')
