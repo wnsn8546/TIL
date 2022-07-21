@@ -2,12 +2,8 @@ T = int(input())
 
 for test_case in range(1, T + 1):
     t1, m1, t2, m2 = map(int, input().split())
+    
+    t = 12 if (((t1 + t2) + (m1 + m2) // 60) % 12) == 0 else (((t1 + t2) + (m1 + m2) // 60) % 12)
+    m = (m1 + m2) % 60
 
-    if (t1 + t2) >= 12 and (m1 + m2) >= 60:
-        print(f'#{test_case}', (t1 + t2 + 1) - 12,  (m1 + m2) - 60)
-    elif (t1 + t2) >= 12:
-        print(f'#{test_case}', (t1 + t2) - 12, m1 + m2)
-    elif (m1 + m2) >= 60 :
-        print(f'#{test_case}', (t1 + t2) + 1, (m1 + m2) - 60)
-    else:
-        print(f'#{test_case}', t1 + t2, m1 + m2)
+    print(f'#{test_case}', t, m)
