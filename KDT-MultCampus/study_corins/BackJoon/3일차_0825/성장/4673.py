@@ -23,3 +23,4 @@ for i in range(1, 65):
 for i in range(1, 65):
     if i not in gen_list:
         print(i)
+
