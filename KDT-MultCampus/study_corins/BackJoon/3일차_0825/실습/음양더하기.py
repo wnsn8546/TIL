@@ -1,7 +1,6 @@
 # sings[i]가 True이면 answer에 더하고, 
 # False이면 answer에서 뺀다.
 
-
 def solution(absolutes, signs):
     answer = 0
     
