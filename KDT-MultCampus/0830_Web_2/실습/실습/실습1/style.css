@@ -1,4 +1,7 @@
 /* 아래에 CSS를 작성해주세요. */
+.container {
+  max-width: 100%;
+}
 .allabout {
   font-size: 12px;
   font-weight: bold;
