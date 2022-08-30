@@ -1,10 +1,18 @@
 /* 아래에 CSS를 작성해주세요. */
 .card {
   width: 300px;
-  border-radius: 0.4rem;
+  
+}
+.item-image {
+  width: 100%;
+  border-radius: 0.3rem;
 }
 h3 {
   margin: 0;
+}
+.front-info {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .item-brand {
   color: #828c94;
