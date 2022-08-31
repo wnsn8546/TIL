@@ -7,31 +7,35 @@
 # 네 번째 줄 : 명령어
 # 위와 같은 네 줄이 한 개의 테스트 케이스이며, 총 10개의 테스트 케이스가 주어진다.
 #기호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 수정된 암호문의 처음 10개 항을 출력한다.
-import sys
-sys.stdin = open('input.txt', 'r', encoding='utf-8')
-input = sys.stdin.readline
+# import sys
+# sys.stdin = open('input.txt', 'r', encoding='utf-8')
+# input = sys.stdin.readline
+
 T = 10 # 테스트케이스 개수
 
-for test_case in range(T): # 테스트케이스 만큼 반복
-    length_original = int(input()) # 원본 길이
-    original_text = list(input().split()) # 원본
-    length_order = int(input()) # 명령어 길이
-    order_text = list(input().split()) # 명령어
-    result = original_text # 결과
-    x = '' # x를 담을 변수
-    y = '' # y를 담을 변수
+for test_case in range(1, T+1): # 테스트케이스 수만큼 반복
+    original_length = int(input()) # 원본 길이
+    original_text = list(input().split()) # 원본 내용
+    order_num = int(input()) # 명령어 개수
+    order_text = list(input().split()) # 명령어 내용
+    result = original_text # 원본 복사
+    x = 0 # x값을 저장할 변수
+    y = 0 # y값을 저장할 변수
 
-    for i in range(0, len(order_text)): # 명령문의 개수만큼 반복한다.
-        if order_text[i] == 'I': # I를 만났을때 x, y값 할당한다.
-            x = int(order_text[i+1])
-            y = int(order_text[i+2])
-                
-            for k in range(0, y): # y개수 만큼 리스트에 추가
-                if x > length_original:
-                        break
-                result.insert(x+k, order_text[i+3+k])
-                
-    print(f'#{test_case+1}',end=' ') # 출력
-    for i in range(0, 10):
-        print(result[i], end=' ')
-    print()
+    for i in range(0, len(order_text)): # 명령문을 순회한다.
+        if order_text[i] == 'I': # 명령문 시작
+            x = int(order_text[i+1]) # 다음 인덱스가 x
+            y = int(order_text[i+2]) # 그 다음 인덱스가 y
+
+            for k in range(y): # y수 만큼 반복
+                result.insert(x+k, order_text[i+3+k]) # insert로 넣어준다.
+    result_len = len(result) # 수정된 암호문의 길이를 저장해놓고,
+
+    print(f'#{test_case}',end=' ') # 출력형식
+    if result_len >= 10: # 길이가 10이상이면
+        for i in range(10): # 10까지 출력
+            print(result[i], end=' ')
+    else: # 10 미만이면
+        for i in range(result_len+1): # 길이만큼만 출력
+            print(result[i], end=' ')
+    print() # 개행
