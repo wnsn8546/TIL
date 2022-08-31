@@ -1,6 +1,6 @@
 /* 아래에 CSS를 작성해주세요. */
 .container {
-  max-width: 100%;
+  width:900px;
 }
 .allabout {
   font-size: 12px;
@@ -15,8 +15,6 @@ h2 {
 }
 .whole-box {
   width: 900px;
-  padding-left: 26px;
-  padding-right: 26px;
   display: flex;
 }
 .item-box {
