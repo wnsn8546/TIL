@@ -1,0 +1,55 @@
+/* 아래에 CSS를 작성해주세요. */
+.container {
+  width:900px;
+}
+.allabout {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px ;
+  line-height: 13px;
+}
+.whole-box {
+  width: 900px;
+  display: flex;
+}
+.item-box {
+  width: 300px;
+
+}
+.item-title {
+  margin: 10px;
+  font-size: 14px;
+}
+.pre-item-title {
+  margin: 10px;
+  font-size: 13px;
+}
+.item-image{
+  max-width: 93%;
+  height: auto;
+  border-radius: 0.7rem;
+}
+
+.explain {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #191919;
+  font-size: 13px;
+}
+.explain-title {
+  color: #000000;
+  font-size: 14;
+}
+.txt {
+  display:block;
+  margin: 16px 10px;
+  line-height: 1.6;
+  color: #707070;;
+  font-size: 13px;
+  word-break: keep-all;
+}
