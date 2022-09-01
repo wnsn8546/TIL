@@ -14,4 +14,4 @@ for test_case in range(T): # 테스트케이스만큼 반복
             print(mirror_dimension[strings[i]], end='')
         else: # 아니면 그대로 출력한다.
             print(strings[i], end='')
-    print()
+    print() # 개행

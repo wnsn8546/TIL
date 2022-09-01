@@ -7,13 +7,13 @@
 
 T = int(input()) # 테스트케이스 개수를 입력받는다.
 
-for test_case in range(1, T+1):
+for test_case in range(1, T+1): # 테스트개수만큼 반복한다.
     nums = input().replace('-', '') # 카드번호를 입력받는다.
     
-    if len(nums) != 16:
-        print(f'#{test_case} 0') # 출력
+    if len(nums) != 16: # 16자리 수자가 아니면,
+        print(f'#{test_case} 0') # 0을 출력
         continue
-    if nums[0] not in '34569':
-        print(f'#{test_case} 0') # 출력
+    if nums[0] not in '34569': # 첫번째 숫자가 34569가 아니면,
+        print(f'#{test_case} 0') # 0을 출력
         continue
-    print(f'#{test_case} 1') # 출력
+    print(f'#{test_case} 1') # 둘 다 해당되지 않으면, 1을 출력

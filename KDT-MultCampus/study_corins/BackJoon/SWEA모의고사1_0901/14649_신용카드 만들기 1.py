@@ -10,17 +10,17 @@
 
 T = int(input()) # 테스트케이스 개수를 입력받는다.
 
-for test_case in range(1, T+1):
+for test_case in range(1, T+1): # 테스트개수만큼 반복
     result = 0 # 결과를 저장해놓을 변수
     nums = list(map(int, input().split())) # # 카드번호를 입력받는다.
-    sum_nums = 0
+    sum_nums = 0 # 합을 저장해놓을 변수
 
-    for i in range(len(nums)):
-        if i % 2 == 0: # 인덱스이기때문에 홀수번째
+    for i in range(len(nums)): # 숫자의 길이만큼 순회
+        if i % 2 == 0: # 인덱스이기때문에 홀수번째일때,
             sum_nums += nums[i] * 2 # 2를 곱해서 더한다.
-        else: # 짝수 번째
+        else: # 짝수 번째일때,
             sum_nums += nums[i] # 그냥 더한다.
     # result = (sum_nums + N) % 10 == 0
-    if sum_nums % 10 > 0: # 
-        result = 10 - (sum_nums % 10)
-    print(f'#{test_case} {result}') # 출력
+    if sum_nums % 10 > 0: # 10으로 나누었을때 나누어 떨어지지 않을때,
+        result = 10 - (sum_nums % 10) # N을 구한다.
+    print(f'#{test_case} {result}') # 결과 출력
