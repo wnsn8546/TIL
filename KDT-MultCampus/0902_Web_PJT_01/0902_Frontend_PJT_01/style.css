@@ -3,6 +3,7 @@
 
 * {
   font-family: 'Noto Sans KR';
+  word-break:keep-all;
 }
 
 .navi {
@@ -53,7 +54,7 @@
   align-items: center;
   background-image: url("./images/background.jpg");
   background-size: cover;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
 }
 
 .title-text {
@@ -135,7 +136,7 @@ aside {
 .movie-title {
   margin: 0;
   padding: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.1vw;
   font-weight: 600;
   display: none;
 }
@@ -158,8 +159,6 @@ aside {
   height: 32px;
   opacity: 0.3;
   border-radius: 20px;
-
-
 }
 
 .footer {
@@ -176,10 +175,6 @@ aside {
   z-index: 100;
 }
 
-.card:hover .middle {
-  opacity: 1;
-}
-
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -194,11 +189,15 @@ aside {
 .text {
   background-color: rgb(256, 67, 81, 1);
   color: white;
-  font-size: 16px;
-  padding: 14px 32px 14px;
-  border-radius: 20px;
+  font-size: 1vw;
+  padding: 1vw 2vw;
+  border-radius: 25px;
 }
 
 .card:hover .card-img {
   opacity: 0.3;
+}
+
+.card:hover .middle {
+  opacity: 1;
 }
