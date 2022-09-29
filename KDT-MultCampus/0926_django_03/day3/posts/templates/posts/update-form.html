@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+<h1>수정하기</h1>
+<form action="/posts/update/{{ id }}">
+  제목 수정: <input type="text" name="title" value="{{ title }}" /><br />
+  내용 수정: <input type="text" name="content" value="{{ content }}" />
+  <input type="submit" />
+</form>
+{% endblock %}

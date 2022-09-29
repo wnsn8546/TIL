@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h1>lorem-한글 생성기</h1>
+<form action="/lipsum-kor-result">
+  문단의 수: <input type="text" name="paragraph_num" />
+  <br />
+  문단별 단어의 수: <input type="text" name="word_num" />
+  <input type="submit" />
+</form>
+{% endblock content %}
