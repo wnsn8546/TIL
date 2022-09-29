@@ -1,0 +1,141 @@
+{% extends 'base.html' %} {% block content %} <span></span><span></span
+><span></span>{% include 'todos/includetest.html' %}
+<h1>Todo List!!!</h1>
+<form action="{% url 'todos:create' %}">
+  <div class="input-group m-2 mr-2">
+    <div class="input-group-text" id="btnGroupAddon">할 일</div>
+    <input
+      type="text"
+      name="content"
+      class="form-control"
+      placeholder="할 일을 입력해주세요."
+      required
+    />
+  </div>
+  <div class="input-group m-2 mr-2">
+    <div class="input-group-text" id="btnGroupAddon">우선 순위</div>
+    <select
+      class="form-select form-select-sm"
+      aria-label=".form-select-sm example"
+      name="priority"
+      required
+    >
+      <option value="" selected disabled hidden>==선택해주세요==</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+  <div class="input-group m-2 mr-2">
+    <div class="input-group-text" id="btnGroupAddon">마감 기한</div>
+    <input type="date" name="deadline" class="form-control" required />
+  </div>
+  <div class="d-grid m-2">
+    <input class="btn btn-outline-primary" type="submit" value="할 일 추가" />
+  </div>
+</form>
+<div>
+  <table class="table" style="table-layout: fixed">
+    <thead>
+      <tr>
+        <th scope="col">우선순위</th>
+        <th scope="col">할 일</th>
+        <th scope="col">생성 날짜</th>
+        <th scope="col">마감 기한</th>
+        <th scope="col">진행상태</th>
+        <th scope="col">상태변경</th>
+        <th scope="col">수정</th>
+        <th scope="col">삭제</th>
+      </tr>
+    </thead>
+    <tbody class="align-middle">
+      {% for todo in todos%} {% if todo.completed == True %}
+      <tr class="text-decoration-line-through align-middle">
+        <th scope="row">{{ todo.priority }}</th>
+        <td>{{ todo.content }}</td>
+        <td>{{ todo.created_at | date:'Y-m-d' }}</td>
+        <td>{{ todo.deadline | date:'Y-m-d' }}</td>
+        <td>
+          <button type="button" class="btn btn-primary">Done!!</button>
+        </td>
+        <td>
+          <a href="{% url 'todos:change_status' todo.pk %}"
+            ><button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class=""
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"
+                />
+              </svg>
+              변경
+            </button></a
+          >
+        </td>
+        <td>
+          <a href="{% url 'todos:update_form' todo.pk %}"
+            ><button type="button" class="btn btn-success">modify</button></a
+          >
+        </td>
+        <td>
+          <a href="{% url 'todos:delete' todo.pk %}"
+            ><button type="button" class="btn btn-danger">delete</button></a
+          >
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <th scope="row">{{ todo.priority }}</th>
+        <td>{{ todo.content }}</td>
+        <td>{{ todo.created_at | date:'Y-m-d' }}</td>
+        <td>{{ todo.deadline | date:'Y-m-d' }}</td>
+        {% if todo.deadline < now_time %}
+        <td><button type="button" class="btn btn-dark">Failed</button></td>
+        {% else %}
+        <td><button type="button" class="btn btn-warning">Yet...!</button></td>
+        {% endif %}
+        <td>
+          <a href="{% url 'todos:change_status' todo.pk %}"
+            ><button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class=""
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"
+                />
+              </svg>
+              변경
+            </button></a
+          >
+        </td>
+        <td>
+          <a href="{% url 'todos:update_form' todo.pk %}"
+            ><button type="button" class="btn btn-success">modify</button></a
+          >
+        </td>
+        <td>
+          <a href="{% url 'todos:delete' todo.pk %}"
+            ><button type="button" class="btn btn-danger">delete</button></a
+          >
+        </td>
+      </tr>
+      {% endif %}
+      <span></span>
+      <span></span>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock%}
