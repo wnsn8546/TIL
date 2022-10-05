@@ -1,0 +1,74 @@
+{% extends 'base.html'%} {% block content%}
+<h1 class="mb-4">게시판</h1>
+<table class="table table-striped mb-4" style="text-align: center">
+  <colgroup>
+    <col width="5%" />
+    <col width="50%" />
+    <col width="20%" />
+    <col width="20%" />
+  </colgroup>
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">제목</th>
+      <th scope="col">created_at</th>
+      <th scope="col">updated_at</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in posts.object_list %}
+    <tr>
+      <th scope="row">{{ article.pk }}</th>
+      <td>
+        <h3>
+          <a href="{% url 'articles:detail' article.pk %}" class="custom-title"
+            >{{ article.title }}</a
+          >
+        </h3>
+      </td>
+      <td>{{ article.created_at }}</td>
+      <td>{{ article.updated_at }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div class="d-flex justify-content-center">
+  <ul class="pagination mb-3" style="text-align: center">
+    {% if posts.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{posts.previous_page_number}}">이전</a>
+    </li>
+    {% endif %} {% for p in posts.paginator.page_range %}
+    <span></span
+    ><span></span
+    ><span></span>
+    {% if p == posts.number %}
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="?&page={{ page_number }}">{{p}}</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{p}}" class="mx-1">{{p}}</a>
+    </li>
+    {% endif %}{% endfor %}{% if posts.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{posts.next_page_number}}">다음</a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+<div class="d-flex justify-content-between">
+  <form action="{% url 'articles:search' %}">
+    <select name="search_target">
+      <option value="title_content">제목+내용</option>
+      <option value="title">제목</option>
+      <option value="content">내용</option>
+    </select>
+    <input type="text" name="search_keyword" id="" />
+    <button type="submit" class="btn btn-secondary">검색</button>
+  </form>
+  <a href="{% url 'articles:create' %}"
+    ><button class="btn btn-secondary">글 쓰기</button></a
+  >
+</div>
+{% endblock %}

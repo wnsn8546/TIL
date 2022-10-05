@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %} <span></span><span></span
+><span></span><span></span><span></span>
+{% for article in posts.object_list %}
+<span></span>
+
+<h3>
+  <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a>
+</h3>
+<p>{{ article.created_at }} | {{ article.updated_at }}</p>
+<hr />
+{% endfor %}
+<div>
+  {% if posts.has_previous %}
+  <a href="?page={{posts.previous_page_number}}">이전</a>
+  {% endif %} {% for p in posts.paginator.page_range %}
+  <a href="?page={{p}}" class="mx-1">{{p}}</a>
+  {% endfor %} {% if posts.has_next %}
+  <a href="?page={{posts.next_page_number}}">다음</a>
+  {% endif %}
+</div>
+{% endblock %}
