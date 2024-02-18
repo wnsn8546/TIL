@@ -1,8 +1,8 @@
 import java.util.*;
-
+// 나누어 떨어지는 숫자 배열
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-        
+        // 배열의 각 원소 중 divisor 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하라.
         int count = 0;
         int number = 0;
         
