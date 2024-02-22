@@ -1,5 +1,7 @@
+// 배열 두배 만들기
 class Solution {
     public int[] solution(int[] numbers) {
+        // * 2씩해서 리턴.
         int[] answer = new int[numbers.length];
         
         for(int i = 0; i < numbers.length;i++) {
