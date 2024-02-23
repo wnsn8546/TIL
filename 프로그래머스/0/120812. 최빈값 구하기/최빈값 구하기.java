@@ -1,5 +1,5 @@
 import java.util.*;
-
+// 최빈값 구하기
 class Solution {
     public int solution(int[] array) {
         int answer = 0;
@@ -17,7 +17,6 @@ class Solution {
                 max = temp[i];
                 answer = i;
              }
-            if(temp[i]!=0)System.out.println(i+" "+temp[i]+" "+ max);
         }
         // 최빈값과 같은 값이 몇개 있는지 체크하고 count가 2이상이 되면 -1을 리턴한다.
         for(int i = 0; i < temp.length;i++) {
