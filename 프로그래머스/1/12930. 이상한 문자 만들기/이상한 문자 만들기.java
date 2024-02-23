@@ -14,9 +14,9 @@ class Solution {
             if(splitS[i].equals(" ")) {// 문자가 공백이면 count 변수를 0으로 초기화 하고 공백을 넣어준다.
                 count = 0;
                 answer += " ";
-            } else if(count % 2 == 0){ // 문자 인덱스가 짝수번째이면 알파벳을 소문자로 바꿔서 넣어준다.
+            } else if(count % 2 == 0){ // 짝수번째이면 알파벳을 소문자로 바꿔서 넣어준다.
                 answer += splitS[i].toLowerCase();
-            } if(count % 2 == 1){ // 문자 인덱스 홀수번째이면 알파벳을 대문자로 바꿔서 넣어준다.
+            } if(count % 2 == 1){ // 홀수번째이면 알파벳을 대문자로 바꿔서 넣어준다.
                 answer += splitS[i].toUpperCase();
             }
         }
