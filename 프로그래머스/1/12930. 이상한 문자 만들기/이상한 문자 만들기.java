@@ -1,3 +1,4 @@
+// 이상한 문자 만들기
 class Solution {
     public String solution(String s) {
         // 문자열 s는 한 개 이상의 단어로 구성되어있다.
@@ -20,7 +21,6 @@ class Solution {
                 answer += splitS[i].toUpperCase();
             }
         }
-        
         
         return answer;
     }
