@@ -11,8 +11,9 @@ class Solution {
         while(tempStr1.length() != 1) { // 길이가 1될때까지 반복.
             countChange++;
             String tempStr2 = "";
+            char[] cArr = tempStr1.toCharArray();
             for(int i = tempStr1.length() - 1; i >= 0; i--) { // 0제거, 1새로운 문자열에 추가.
-                if(tempStr1.charAt(i) == '1') {
+                if(cArr[i] == '1') {
                     tempStr2 += "1";
                 } else {
                     countRemoveZero++; 
