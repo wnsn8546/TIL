@@ -21,9 +21,5 @@ class Solution {
             answer = Integer.parseInt(temp);
             return answer;
         }
-        
-        
-        
-        //return answer;
     }
 }
