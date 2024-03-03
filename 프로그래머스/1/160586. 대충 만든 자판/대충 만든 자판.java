@@ -24,10 +24,7 @@ class Solution {
                 String temp = "" + targets[i].charAt(j);
                 if(map.containsKey(temp)) {
                     answer[i] += map.get(temp);
-                } else {
-                    answer[i] = -1;
-                    break;
-                }
+                } 
             } 
             if(answer[i] == 0) answer[i] = -1;
         }
