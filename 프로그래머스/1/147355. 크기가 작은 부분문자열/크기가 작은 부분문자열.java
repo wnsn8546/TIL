@@ -1,3 +1,4 @@
+// 크기가 작은 부분문자열
 class Solution {
     public int solution(String t, String p) {
         // 숫자로 이루어진 문자열 t, p 가 주어질때, t에서 p와 길이가 같은 부분 문자열 중에서,
